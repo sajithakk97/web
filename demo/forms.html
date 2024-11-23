@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <style>
+        .register-form{
+            margin-top: 100px;
+            margin: auto;
+            width:60%;
+            height: 90%;
+            background-color: rgba(203, 203, 240,30);
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 50% 50%;
+        }
+        .register-form button{
+            background-color: rgb(26, 234, 144);
+            width: 200px;
+            height: 30px;
+        }
+        form input{
+            border: none;
+            border-bottom: 1px solid black;
+            padding:10px;
+            background-color: transparent;
+        }
+        form select{
+            border: none;
+            border-bottom: 1px solid black;
+            padding:10px;
+            background-color: transparent;
+        }
+        form{
+            padding-left: 40px;
+        }
+        img{
+            height:100%;
+            width:100%
+        }
+    </style>
+</head>
+<body>
+    <div class="register-form">
+        
+        <div>
+            <img src="image\image17.jpg" alt="">
+        </div>
+        <div>
+       <div>
+        <h1 style="text-align: center;">Sign Up Form</h1>
+        <p style="text-align: center;">Please register here </p>
+
+
+        <form action="" mathod="" id="main">
+            <input type="text" placeholder="First name"><br><br>
+            <input type="text" placeholder="Enter last name"><br><br>
+            <input type="email" placeholder="Enter your email address"><br><br>
+            <input type="text" placeholder="Enter your address"><br><br>
+            <select name="district" value="district">
+                <option selected disabled>choose your option</option>
+                <option value="malappuram">malappuram</option>
+                <option value="kozhikode">kozhikode</option>
+                <option value="wayanad">wayanad</option>
+                <option value="palakkad">palakkad</option>
+            </select><br><br>
+            <input type="tel" placeholder="Contact number"><br><br>
+            <label>Gender:</label>
+            <input type="radio" value="Female" name="gender">
+            <label for="">Female</label>
+            <input type="radio" value="Male" name="gender">
+            <label for="">Male</label><br><br>
+            <input type="password" placeholder="Enter your password"><br><br>
+            <input type="password" placeholder="Confirm password"><br><br>
+            
+            <button>Register</button>
+
+        </form>
+       </div>
+    </div>
+    </div>
+    
+</body>
+</html>
