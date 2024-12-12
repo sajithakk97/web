@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>restoran</title>
+    <script src="https://kit.fontawesome.com/76de4d8d80.js" crossorigin="anonymous"></script>
+    <style>
+        *{margin:0;
+        padding: 0;}
+
+        .navbar,.booking1,.item1,.item1-price,.input-values1,.input-values2,.members,.Contact{
+            display: flex;
+            justify-content: space-between;
+        }
+        .menu-items{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        
+        
+        .name{
+            display: flex;
+            
+        }
+        .name h1{
+            padding: 1px;
+            text-align: start;
+            color:rgb(254, 161, 22)
+            
+        }
+        .navbar{
+            background:linear-gradient(rgba(0, 0, 19,.9),rgba(15, 23, 43, .9));
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+ 
+        }
+        .navbar-items li{
+            display: flex;
+            display: inline-block;
+            padding-right: 2px;
+            
+        }
+        .button{
+            background-color: rgb(254, 161, 22);
+            padding:15px ;
+        }
+        
+        .navbar-items a:hover{
+            color:rgb(254, 161, 22)
+
+        }
+        .navbar-items a{
+            text-decoration: none;
+            color: white;
+            padding:10px 3px;
+            transition: color 2s;
+        }
+        .section{
+            background: linear-gradient(rgba(0, 0, 19,.9),rgba(15, 23, 43, .9)),url(bg-hero.jpg);
+            width:100%;
+            height: 150vh;
+            display:flex;
+            justify-content: space-between;
+
+        }
+        .section-content{
+            display: flex;
+            display: inline-block;
+            padding-left: 60px;
+            
+            
+        }
+        .name i,.welcome-content i{
+            font-size: 35px;
+            padding-left: 15px;
+            color:rgb(254, 161, 22);
+            padding-right: 2px;
+        }
+        .image{
+            display: flex;
+            width: 50%;
+            padding-top: 50px;
+            /* height: 300px; */
+            padding-right: 50px;
+            padding-left: 50px;
+        }
+        .image img{
+            width: 470px;
+            height: 470px;
+            animation-name: hero;
+            animation-duration: 18s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            
+        }
+        @keyframes hero{
+           0% {
+            transform: rotate(0deg);
+           }
+           100%{
+            transform: rotate(360deg);
+           }
+        }
+        
+        .section-content h1{
+            font-family: "Nunito", sans-serif;
+            color: white;
+            font-size: 65px;
+            padding-top: 220px;
+         
+
+        }
+        .section-content p{
+            color: white;
+            padding-top: 5px;
+            padding-bottom: 35px;
+            font-size: 17px;
+            
+        }
+        .section-content{
+            animation-name: meal;
+            animation-duration: 1.5s;
+            position:relative;
+        }
+        @keyframes meal{
+            0%{transform: translate(-1000px,0px);}
+            100%{transform: translate(25px,0px);} 
+        }
+
+        .section button{
+            background-color: rgb(254, 161, 22);
+            color: white;
+            padding: 10px 25px;
+            font-size: 18px;
+            border: 1px solid rgb(254, 161, 22);
+        }
+        .prop{
+            padding: 50px 30px;
+            display: flex;
+            justify-content: space-between;
+            background-color: rgba(161, 159, 157, 0.1);
+            gap: 20px;
+        }
+        .prop div{
+            background-color: white;
+            color: black;
+            border:1px solid white;
+            transition:background-color 1s;
+            
+        }
+        .chef{
+            animation-name: properties;
+            animation-delay:1s;
+            position: relative;
+            animation-duration: 1s;
+            transform:translate(0px,200px);
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+        .food{
+            animation-name: properties;
+            animation-delay:1.3s;
+            position: relative;
+            animation-duration: 1s;
+            transform:translate(0px,200px);
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+        .order{
+            animation-name: properties;
+            animation-delay:1.6s;
+            position: relative;
+            animation-duration: 1s;
+            transform:translate(0px,200px);
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+        .service{
+            animation-name: properties;
+            animation-delay:1.9s;
+            position: relative;
+            animation-duration: 1s;
+            transform:translate(0px,200px);
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+        .prop div i{
+            padding-top: 30px;
+            font-size: 50px;
+            padding-right: 15px;
+            padding-left: 15px;
+            padding-bottom: 20px;
+            color: rgb(254, 161, 22);
+            
+        }
+        .prop div h3{
+            padding-left: 15px;
+            color: rgb(9, 9, 9);
+            font-family: "Times New Roman", Times, serif;
+            font-size: 25px;
+        }
+        .prop div p{
+            padding: 15px;
+            color: rgba(29, 29, 29,.9);
+            padding-bottom: 30px;
+            
+        }
+        .prop div:hover{
+            background-color: rgb(254, 161, 22);
+            h3{color:white};
+            i{color:white};
+            p{color:white};
+        }
+        @keyframes properties{
+            0%{
+                transform: translate(0,200px);
+                opacity: 0;
+            }
+            100%{
+                transform: translate(0,0px);
+                opacity: 1;
+            }
+        }
+        .about{
+            display: flex;
+            justify-content: space-between;
+            padding-top: 50px;
+        }
+        
+        @keyframes restoran-images{
+            0%{
+                transform: scale(0.2);
+                opacity: 0;
+            }
+            100%{
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        #img1,#img2{
+            position:relative;
+            animation-name: restoran-images;
+            animation-duration: 1s;
+            animation-name: restoran-images;
+            transform: scale(0.2);
+            animation-fill-mode: forwards;
+            opacity: 0;
+            animation-timing-function: ease-in-out;
+        }
+        #img1{
+            height: 300px;
+            width: 300px;
+            padding-right: 8px;
+            padding-bottom: 16px;
+            animation-delay: 2.2s;
+        }
+        #img2{
+            height: 200px;
+            width: 200px;
+            animation-delay: 2.4s;
+            padding-left:100px
+            
+        }
+        #img3{
+            height: 200px;
+            width: 200px;
+            animation-delay: 2.6s;
+            padding-left: 8px;
+            padding-top: 100px;
+        }
+        #img3,#img4{
+            animation-name: restoran-images;
+            transform: scale(0.2);
+            animation-fill-mode: forwards;
+            animation-duration: 1s;
+            opacity: 0;
+            animation-timing-function: ease-in-out;
+        }
+        #img4{
+            height: 300px;
+            width: 300px;
+            padding-left: 8px;
+            animation-delay: 2.8s;
+            padding-top: 16px;
+        }
+        .welcome h3,.menu-title h3,.reservation h3,.team1 h3,.company h3,.contact-details h3,.newsletter h3,.opening h3{
+            color: rgb(254, 161, 22);
+            font-family: 'Pacifico', cursive;
+            font-size: 1.25rem;
+        }
+        menu-title h3{
+            position: relative;
+            max-width: 40px;
+        }
+        .menu-title h3::after{
+            content:"";
+            width:50px;
+            height: 2px;
+            position: absolute;
+            left:700px;
+            top: 15px;
+            background-color: orange;
+
+        }
+        .menu-title h3::before{
+            content:"";
+            width:50px;
+            height: 2px;
+            position: absolute;
+            left:510px;
+            top: 15px;
+            background-color: orange;
+        }
+        .welcome h3{
+            position: relative;
+            max-width: 400px;
+        }
+        .welcome h3::after{
+            content:"";
+            width:100px;
+            height: 2px;
+            position: absolute;
+            left:100px;
+            top: 15px;
+            background-color: orange;
+        }
+        
+        .welcome-content{
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 20px;
+            
+        }
+        .welcome-content h1{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bolder;
+        }
+        .welcome p{
+            color: rgba(56, 55, 55, 0.7);
+            font-size: medium;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            padding-bottom: 20px;
+        }
+        .years{
+            display:flex;
+            justify-content: space-between;
+            padding-bottom: 40px;
+        }
+        .exp,.count{
+            display:flex;
+            justify-content: space-between;
+            border-left: 5px solid rgb(254, 161, 22);;
+            
+        }
+        .exp h1,.count h1{
+            padding:2px 15px;
+            color:rgb(254, 161, 22);;
+            font-size: 50px;
+            font-weight: bolder;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        
+        .welcome button{
+            background-color:rgb(254, 161, 22);
+            color: white ;
+            padding: 20px 50px;
+            border:1px solid rgb(254, 161, 22) ;
+            font-size: medium;
+        }
+        .times{
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid rgb(103, 101, 101);
+            width:fit-content;
+            margin: auto;
+            padding: 0px;
+        }
+        .lunch,.break,.dinner{
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid none;
+            padding-bottom: 10px;
+            
+        }
+        .lunch div,.break div,.dinner div{
+            display: flex;
+            padding-right: 10px;
+        }
+        .times i{
+            font-size: 50px;
+            color: rgb(254, 161, 22);  
+        }
+        .break:hover,.dinner:hover,.lunch:hover{
+            border-bottom: 2px solid rgb(254, 161, 22);
+        }
+        .menu1{
+            animation-name: menuheading;
+            animation-delay: 3s;
+            transform: translate(0,-200);
+            animation-name: menuheading;
+            position: relative;
+            animation-duration: 1s;
+            transform:translate(0px,200px);
+            opacity: 0;
+            animation-fill-mode: forwards;
+
+        }
+        @keyframes menuheading{
+            0%{
+                transform: translate(0,200px);
+                opacity: 0;
+            }
+            100%{
+                transform: translate(0,0px);
+                opacity: 1;
+            }
+        }
+        .menu2{
+            animation-name: menuheading;
+            animation-delay: 3.2s;
+            transform: translate(0,-200);
+            animation-name: menuitems;
+            position: relative;
+            animation-duration: 1s;
+            transform:translate(0px,200px);
+            opacity: 0;
+            animation-fill-mode: forwards;
+
+        }
+        @keyframes menuitems{
+            0%{
+                transform: translate(0,200px);
+                opacity: 0;
+            }
+            100%{
+                transform: translate(0,0px);
+                opacity: 1;
+            }
+        }
+        .booking1{
+            animation-name: booking;
+            animation-duration: 1s;
+            animation-delay: 3.5s;
+            position: relative;
+            transform: translate(0,200px);
+            opacity: 0;
+            animation-fill-mode: forwards;
+
+        }
+        @keyframes booking{
+            0%{
+                transform: translate(0,200px);
+                opacity: 0;
+            }
+            100%{
+                transform: translate(0,0px);
+                opacity: 1;
+            }
+        }
+        .reservation{
+            padding: 45px;
+            background-color: rgb(2, 2, 28);
+            width: 50%;
+            
+        }
+        .reservation1{
+            animation-name: reservation;
+            animation-delay: 3.8s;
+            animation-duration: .5s;
+            opacity: 0;
+            transform: translate(0,200);
+            position: relative;
+            animation-fill-mode: forwards;
+        }
+        @keyframes reservation{
+            0%{
+                transform: translate(0,200px);
+                opacity: 0;
+            }
+            100%{
+                transform: translate(0,0px);
+                opacity: 1;
+            }
+        }
+        .reservation1 h3,.company h3,.contact-details h3,.opening h3,.newsletter h3{
+            position: relative;
+            max-width: 40px;
+        }
+        .reservation1 h3::after{
+            content:"";
+            width:50px;
+            height: 2px;
+            position: absolute;
+            left:120px;
+            top: 15px;
+            background-color: orange;
+
+        }
+        .company h3::after,.company h3::after,.contact-details h3::after,.opening h3::after{
+            content:"";
+            width:50px;
+            height: 2px;
+            position: absolute;
+            left:90px;
+            top: 12px;
+            background-color: orange;
+
+        }
+        .newsletter h3::after{
+            content:"";
+            width:50px;
+            height: 2px;
+            position: absolute;
+            left:115px;
+            top: 12px;
+            background-color: orange;
+        }
+        
+        .reservation h1{
+            font-size: 40px;
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            padding-bottom: 10px;
+        }
+        .input-values1 input,.input-values2 input,.input-values2 select{
+            padding: 15px 8px;
+            width:40%
+            
+        }
+        #request{
+            padding: 15px 8px;
+            width:96%;
+            padding-bottom: 15px;
+            height: 50px;
+        }
+        .input-values1 input::placeholder,.input-values2 input::placeholder,#request::placeholder{
+            color: gray;
+            font-size: 16px;
+            opacity: 0.8;
+            
+        }
+        input:focus  {
+            border: 5px solid rgba(218, 182, 116,.3);
+        }
+        input:focus  input::placeholder{
+            font-size: 100px;        }
+            
+        .form-fill input[type=button]{
+            background-color: orange;
+            width: 100%;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px 8px;
+            border: 1px solid orange;
+            height: 50px;
+            font-size: 16px;
+            padding-bottom: 20px;
+        }
+        .team1{
+            animation-name: teams;
+            transform: translate(0,200px);
+            position:relative;
+            opacity: 0;
+            animation-fill-mode: forwards;
+            animation-duration: .5s;
+            animation-delay: 4s;
+        }
+        @keyframes teams{
+            0%{
+                transform: translate(0,-200px);
+                opacity: 0;
+            }
+            100%{
+                transform: translate(0,0px);
+                opacity: 1;
+            }
+        }
+        .members{
+            background-color: rgba(161, 159, 157, 0.1); 
+            gap: 10px ;
+            padding: 30px 50px;
+            text-align: center;
+            animation-name: members;
+            animation-duration: .5s;
+            animation-delay: 4s;
+            animation-fill-mode: pr;
+            position: relative;
+            
+        }
+        .members1:hover .social1{
+            max-height: 100px;
+            opacity: 1;
+        } 
+       
+        
+        .members1{
+            background-color: white;
+            padding: 30px; 
+            animation-name: properties;
+            animation-duration: .5s;
+            animation-delay: 4.5s;
+            animation-fill-mode: forwards;
+            position: relative;
+            opacity:0;
+            transform: block 5s;
+        }
+        .members2{
+            background-color: white;
+            padding: 30px; 
+            animation-name: properties;
+            animation-duration: .5s;
+            animation-delay: 4.7s;
+            animation-fill-mode: forwards;
+            position: relative;
+            opacity:0
+            
+        }
+        .members3{
+            background-color: white;
+            padding: 30px; 
+            animation-name: properties;
+            animation-duration: .5s;
+            animation-delay: 4.9s;
+            animation-fill-mode: forwards;
+            position: relative;
+            opacity:0
+            
+        }
+        .members4{
+            background-color: white;
+            padding: 30px; 
+            animation-name: properties;
+            animation-duration: .5s;
+            animation-delay: 5.1s;
+            animation-fill-mode: forwards;
+            position: relative;
+            opacity:0
+            
+        }
+        
+        .members1 img ,.members2 img,.members3 img,.members4 img{
+            width:150px;
+            width: 150px;
+            border-radius: 50%;
+            padding-bottom: 10px;
+        }
+        .social1{
+            padding-top: 20px;
+            overflow: hidden;
+            transition: max-height 2s,opacity 2s;
+            max-height: 0;
+            top: 100%;
+            opacity: 0;
+            
+        }
+        .members2:hover .social2{
+            max-height: 100px;
+            opacity: 1;
+        } 
+        .social2{
+            padding-top: 20px;
+            overflow: hidden;
+            transition: max-height 2s,opacity 2s;
+            max-height: 0;
+            top: 100%;
+            opacity: 0;
+        }
+        .members3:hover .social3{
+            max-height: 100px;
+            opacity: 1;
+        } 
+        .social3{
+            padding-top: 20px;
+            overflow: hidden;
+            transition: max-height 2s,opacity 2s;
+            max-height: 0;
+            top: 100%;
+            opacity: 0;
+        }
+        .members4:hover .social4{
+            max-height: 100px;
+            opacity: 1;
+        } 
+        .social4{
+            padding-top: 20px;
+            overflow: hidden;
+            transition: max-height 2s,opacity 2s;
+            max-height: 0;
+            top: 100%;
+            opacity: 0;
+        }
+        .Contact{
+            background-color:#0F172B ;
+            padding: 100px 50px; 
+        }
+        .company div p{
+            padding-right: 8px;
+            font-size: 12px;
+            color: white;
+
+        }
+        .company div a{
+            font-size: 15px;
+            color: white;
+            transition: font-size .5s;
+            
+        }
+        #link1:hover,#link2:hover,#link3:hover,#link4:hover,#link5:hover {
+            font-size: 18px;
+        }
+        .location,.phone,.email{
+            display:  flex;
+            justify-content: space-between;
+            padding-bottom: 10px;
+        }
+        .social-icons,.newsletter-form{
+            display: flex;
+            justify-content: space-between;
+        }
+        .social-icons div{
+            border: 1px solid white;
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .social-icons div svg{
+            background-color: transparent;
+        }
+        .link10:hover svg ,.link11:hover svg ,.link12:hover svg ,.link13:hover svg {
+            fill: orange;
+        }
+        .link10:hover,.link11:hover,.link12:hover,.link13:hover  {
+            background-color: white;
+        }
+        .opening p,.newsletter p{
+            color: white;
+            font-size: 18px;
+            padding-bottom: 8px;
+        }
+        .newsletter{
+            width:280px;
+        }
+        .newsletter p{
+            padding-right: 8px;
+            padding-bottom: 10px;
+        } 
+        .newsletter-form{
+            padding-left: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: white;
+        }
+        .newsletter-form input {
+            border: 1px solid transparent;
+        }
+        .newsletter-form button{
+            background-color: orange;
+            padding-left: 2px;
+            font-size: 15px;
+            border: 1px solid transparent;
+            padding: 8px;
+            color: white;
+        }
+        .arrow{
+            background-color: orange;
+            padding: 10px;
+            width:40px;
+            height: 40px;
+            position: fixed;
+            top:450px;
+            left:90%;
+            z-index: 1000;
+            color:white;
+        }
+        .paly{
+            position: absolute;
+            z-index: 3;
+            padding: 50px;
+            background-color: rgb(226, 43, 43);
+            top:100px;
+            left: 100px;
+
+        }
+        .video-button{
+            position: relative;
+        }
+        </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="name">
+            <i class="fa-solid fa-utensils" style="color: rgb(254, 161, 22);"></i>
+            <h1>Restoran</h1>
+        </div>
+        <div class="navbar-items">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Service</a></li>
+                <li><a href="">Menu</a></li>
+                <li><a href="">Pages</a></li>
+                <li><a href="">Contact</a></li>
+                <li class="button"><a href="">BOOK A TABLE</a></li>
+            </ul>
+        
+        </div>
+    </div>
+    <div class="arrow" >
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"/>
+          </svg>
+    </div>
+
+    <div class="main" > 
+        <div class="section">
+            <div class="section-content">
+                <h1 >Enjoy Our Delicious Meal</h1>
+                <p style="color: white;">Tempor erat elitr rebum at clita.Diam dolor diam ipsum sit.Aliqua diam amet diam eteos.Clita erat ipsum et lorem et sit,
+                    sed stet lorem sit clita dio justo magna dolore erat amet. </p>
+                <button>BOOK A TABLE</button>
+            </div>
+            
+            <div class="image">
+                <img src="hero.png" alt="">
+            </div>
+            
+        </div>
+        <div class="prop">
+            <div class="chef">
+                <i class="fa-solid fa-utensils" ></i>
+                <h3>Master Chefs</h3>
+                <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+            </div>
+            <div class="food">
+                <i class="fa-solid fa-utensils" ></i>
+                <h3>Quality Food</h3>
+                <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+            </div>
+            <div class="order">
+                <i class="fa-solid fa-cart-plus"></i>
+                <h3><b>online order</b></h3>
+                <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+            </div>
+            <div class="service">
+                <i class="fa-sharp fa-solid fa-headphones"></i>
+                <h3>24/7 Service</h3>
+                <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+            </div>
+        </div>
+
+        <div class="about">
+            <div class="restoran-images" style="padding: 50px 30px; display: flex;justify-content: space-between;">
+                <div>
+                    <img id="img1" src="..\image\about-1.jpg" alt="">
+                    <img id="img2" src="..\image\about-3.jpg" alt="">
+                </div>
+                <div>
+                    <img id="img3" src="..\image\about-2.jpg" alt="">
+                    <img id="img4" src="..\image\about-4.jpg" alt="">
+                </div>
+            </div>
+            <div class="about-us" >
+                <div class="welcome" style="padding-top: 120px; padding-left: 30px; padding-right: 100px;">
+                    <h3>About us</h3>
+                    <div class="welcome-content" >
+                        <h1>welcome to</h1>
+                        <i class="fa-solid fa-utensils" ></i>
+                        <h1> Restoran</h1>
+                    </div>
+                    <p >Tempor erat elitr rebum at clita.Diam dolor diam ipsum sit.Aliqua diam amet diam et eos erat 
+                        ipsum et lorem et sit ,sed stet lorem sit.</p>
+                    <p>Tempor erat elitr rebum at clita.Diam dolor diam ipsum sit.Aliqua diam amet diam et 
+                        eos.Clita erat ipsum et lorem et sit,sed stet lorem sit clita duo justo magna dolore erat amet
+                    </p> 
+                    <div class="years">
+                        <div class="exp">
+                            <h1>15</h1>
+                            <div style="padding-right: 20px;">
+                                <h4 style="color: rgb(66, 65, 65);">Years of </h4>
+                                <h2><b>experience</b></h2>
+                            </div>
+                        </div>
+                        <div class="count">
+                            <h1>50</h1>
+                            <div >
+                                <h4 style="color: rgb(66, 65, 65);">Popular </h4>
+                                <h2 ><b>Master Chefs</b></h2>
+                            </div>
+                        </div>
+                    </div> 
+                    <button>READ MORE</button>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="menu1">
+                <div class="menu-title" style="text-align: center;">
+                    <h3 >Food Menu</h3>
+                </div>
+                <h1 style="text-align: center; font-weight: bolder; font-size: 40px;font-family: 'Times New Roman', Times, serif; padding-top: 15px ; padding-bottom: 20px;">
+                    Most Popular Items</h1>
+            </div>
+            <div class="menu2">
+                <div class="times">
+                    <div class="break">
+                        <div >
+                            <i class="fa-solid fa-mug-saucer"></i>
+                        </div>
+                        <div>
+                            <h3 style="color: rgb(66, 65, 65);">Popular</h3>
+                            <h3>Breakfast</h3>
+                        </div>
+                    </div>
+                    <div class="lunch">
+                        <div >
+                            <i class="fa-solid fa-burger"></i>
+                        </div>
+                        <div>
+                            <h3 style="color: rgb(66, 65, 65); ">Special</h3><br>
+                            <h3 >Lunch</h3>
+                        </div>
+                    </div>
+                    <div class="dinner">
+                        <div >
+                            <i class="fa-solid fa-utensils" ></i>
+                        </div>
+                        <div>
+                            <h3 style="color: rgb(66, 65, 65);">Lovely</h3>
+                            <h3>Dinner</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-items" style="padding: 60px ;">
+                    <div class="menu-items1"  >
+                        <div class="item1" style="padding-bottom: 10px;">
+                            <div class="item1-image">
+                                <img src="..\image\menu-1.jpg" alt="">
+                            </div>
+                            <div class="item1-details" style="padding: 8px 20px;">
+                                <div class="item1-price" style="padding-bottom: 8px; font-family: 'Times New Roman', Times, serif;font-size: 20px;">
+                                    <h3 style="padding-right: 200px;">Chicken Burger</h3>
+                                    <h3 style="color: rgb(254, 161, 22);">$115</h3>
+                                </div>
+                                <hr >
+                                <p style="padding-top: 8px; color: rgb(89, 89, 89);">
+                                    <i> ipsum ipsum clita erat amet dolor justo diam</i></p>
+                            </div>
+                        </div>
+                        <div class="item1" style="padding-bottom: 10px;">
+                            <div class="item1-image">
+                                <img src="..\image\menu-3.jpg" alt="">
+                            </div>
+                            <div class="item1-details" style="padding: 8px 20px;">
+                                <div class="item1-price" style="padding-bottom: 8px; font-family: 'Times New Roman', Times, serif;font-size: 20px;">
+                                    <h3 style="padding-right: 200px;">Chicken Burger</h3>
+                                    <h3 style="color: rgb(254, 161, 22);">$115</h3>
+                                </div>
+                                <hr >
+                                <p style="padding-top: 8px; color: rgb(89, 89, 89);">
+                                    <i> ipsum ipsum clita erat amet dolor justo diam</i></p>
+                            </div>
+                        </div> 
+                        <div class="item1" style="padding-bottom: 10px;">
+                            <div class="item1-image">
+                                <img src="..\image\menu-5.jpg" alt="">
+                            </div>
+                            <div class="item1-details" style="padding: 8px 20px;">
+                                <div class="item1-price" style="padding-bottom: 8px; font-family: 'Times New Roman', Times, serif;font-size: 20px;">
+                                    <h3 style="padding-right: 200px;">Chicken Burger</h3>
+                                    <h3 style="color: rgb(254, 161, 22);">$115</h3>
+                                </div>
+                                <hr >
+                                <p style="padding-top: 8px; color: rgb(89, 89, 89);">
+                                    <i> ipsum ipsum clita erat amet dolor justo diam</i></p>
+                            </div>
+                        </div>
+                        <div class="item1" style="padding-bottom: 10px;">
+                            <div class="item1-image">
+                                <img src="..\image\menu-7.jpg" alt="">
+                            </div>
+                            <div class="item1-details" style="padding: 8px 20px;">
+                                <div class="item1-price" style="padding-bottom: 8px; font-family: 'Times New Roman', Times, serif;font-size: 20px;">
+                                    <h3 style="padding-right: 200px;">Chicken Burger</h3>
+                                    <h3 style="color: rgb(254, 161, 22);">$115</h3>
+                                </div>
+                                <hr >
+                                <p style="padding-top: 8px; color: rgb(89, 89, 89);">
+                                    <i> ipsum ipsum clita erat amet dolor justo diam</i></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-items2" >
+                        <div class="item1" style="padding-bottom: 10px;">
+                            <div class="item1-image">
+                                <img src="..\image\menu-2.jpg" alt="">
+                            </div>
+                            <div class="item1-details" style="padding: 8px 20px;">
+                                <div class="item1-price" style="padding-bottom: 8px; font-family: 'Times New Roman', Times, serif;font-size: 20px;">
+                                    <h3 style="padding-right: 200px;">Chicken Burger</h3>
+                                    <h3 style="color: rgb(254, 161, 22);">$115</h3>
+                                </div>
+                                <hr >
+                                <p style="padding-top: 8px; color: rgb(89, 89, 89);">
+                                    <i> ipsum ipsum clita erat amet dolor justo diam</i></p>
+                            </div>
+                        </div>
+                        <div class="item1" style="padding-bottom: 10px;">
+                            <div class="item1-image">
+                                <img src="..\image\menu-4.jpg" alt="">
+                            </div>
+                            <div class="item1-details" style="padding: 8px 20px;">
+                                <div class="item1-price" style="padding-bottom: 8px; font-family: 'Times New Roman', Times, serif;font-size: 20px;">
+                                    <h3 style="padding-right: 200px;">Chicken Burger</h3>
+                                    <h3 style="color: rgb(254, 161, 22);">$115</h3>
+                                </div>
+                                <hr >
+                                <p style="padding-top: 8px; color: rgb(89, 89, 89);">
+                                    <i> ipsum ipsum clita erat amet dolor justo diam</i></p>
+                            </div>
+                        </div>
+                        <div class="item1" style="padding-bottom: 10px;">
+                            <div class="item1-image">
+                                <img src="..\image\menu-6.jpg" alt="">
+                            </div>
+                            <div class="item1-details" style="padding: 8px 20px;">
+                                <div class="item1-price" style="padding-bottom: 8px; font-family: 'Times New Roman', Times, serif;font-size: 20px;">
+                                    <h3 style="padding-right: 200px;">Chicken Burger</h3>
+                                    <h3 style="color: rgb(254, 161, 22);">$115</h3>
+                                </div>
+                                <hr >
+                                <p style="padding-top: 8px; color: rgb(89, 89, 89);">
+                                    <i> ipsum ipsum clita erat amet dolor justo diam</i></p>
+                            </div>
+                        </div>
+                        <div class="item1" style="padding-bottom: 10px;">
+                            <div class="item1-image">
+                                <img src="..\image\menu-8.jpg" alt="">
+                            </div>
+                            <div class="item1-details" style="padding: 8px 20px;">
+                                <div class="item1-price" style="padding-bottom: 8px; font-family: 'Times New Roman', Times, serif;font-size: 20px;">
+                                    <h3 style="padding-right: 200px;">Chicken Burger</h3>
+                                    <h3 style="color: rgb(254, 161, 22);">$115</h3>
+                                </div>
+                                <hr >
+                                <p style="padding-top: 8px; color: rgb(89, 89, 89);">
+                                    <i> ipsum ipsum clita erat amet dolor justo diam</i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </div>
+        <div class="booking">
+            <div class="booking1">
+                <div class="video-button">
+                    <img src="..\image\video.jpg">
+                    <div class="play">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play" viewBox="0 0 16 16">
+                        <path d="M10.804 8 5 4.633v6.734zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696z"/>
+                      </svg>
+                </div>
+                </div>
+                
+                <div class="reservation" >
+                    <div class="reservation1">
+                        <h3 style="padding-bottom: 10px;" >Reservation</h3>
+                        <h1 >Book A Table Online</h1>
+                        <form action="" method="">
+                            <div class="form-fill">
+                                <div class="input-values1" style="padding-bottom: 15px;">
+                                    <input type="text" name="first_name" id="" placeholder="Your Name">
+                                    <input type="email" name="email" id="" placeholder="Your Email">
+                                </div>
+                                <div class="input-values2" style="padding-bottom: 15px;">
+                                    <input type="datetime" name="first_name" id="" placeholder="Date & Time">
+                                    <select  style="width:45%">
+                                        <option>People1</option>
+                                        <option>People2</option>
+                                        <option>People3</option>
+                                    </select>
+                                    
+                                </div>
+                                <input type="text" placeholder="Special Request" id="request" ><br>
+                                <input type="button" value="BOOK NOW" >
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="team" >
+            <div class="team1" style="padding-top: 60px;padding-bottom: 40px;">
+                <h3 style="padding-bottom: 10px;text-align: center;"  >Team members</h3>
+                <h1 style="text-align: center; font-weight: bolder; font-size: 40px;font-family: 'Times New Roman', Times, serif; ; padding-bottom: 20px;">
+                    Our Master Chefs</h1>        
+            </div>
+            <div class="members" style="padding-bottom: 200px;" >
+                <div class="members1">
+                    <img src="..\image\team-1.jpg">
+                    <div class="member-details" >
+                        <h3>Full Name</h3>
+                        <p style="padding-top: 8px;color: rgb(77, 76, 76);">Designation</p>
+                    </div>
+                    <div class="social1"  >
+                        <svg xmlns="http://www.w3.org/2000/svg" style="position: absolute;bottom: 0;" width="16" height="16" fill="orange" class="bi bi-facebook" viewBox="0 0 16 16">
+                            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                          </svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="orange" class="bi bi-twitter" viewBox="0 0 16 16">
+                            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15"/>
+                          </svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="orange" class="bi bi-instagram" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                          </svg>
+                    </div>
+                   
+                </div>
+                
+                <div class="members2">
+                    <img src="..\image\team-2.jpg">
+                    <div class="member-details" >
+                        <h3>Full Name</h3>
+                        <p style="padding-top: 8px;color: rgb(77, 76, 76);">Designation</p>
+                    </div>
+                    <div class="social2" >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="orange" class="bi bi-facebook" viewBox="0 0 16 16">
+                            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                          </svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="orange" class="bi bi-twitter" viewBox="0 0 16 16">
+                            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15"/>
+                          </svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="orange" class="bi bi-instagram" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                          </svg>
+                    </div>
+                </div>
+                <div class="members3">
+                    <img src="..\image\team-3.jpg">
+                    <div class="member-details" >
+                        <h3>Full Name</h3>
+                        <p style="padding-top: 8px;color: rgb(77, 76, 76);">Designation</p>
+                    </div>
+                    <div class="social3" >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="orange" class="bi bi-facebook" viewBox="0 0 16 16">
+                            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                          </svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="orange" class="bi bi-twitter" viewBox="0 0 16 16">
+                            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15"/>
+                          </svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="orange" class="bi bi-instagram" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                          </svg>
+                    </div>
+                </div>
+                <div class="members4">
+                    <img src="..\image\team-4.jpg">
+                    <div class="member-details" >
+                        <h3>Full Name</h3>
+                        <p style="padding-top: 8px;color: rgb(77, 76, 76);">Designation</p>
+                    </div>
+                    <div class="social4" >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="orange" class="bi bi-facebook" viewBox="0 0 16 16">
+                            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                          </svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="orange" class="bi bi-twitter" viewBox="0 0 16 16" >
+                            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15"/>
+                          </svg>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="orange" class="bi bi-instagram" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                          </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="Contact" >
+            <div class="company" >
+                <h3 style="padding-bottom: 20px;">company</h3>
+                <div style="padding-bottom: 10px;">
+                    <p style="display: inline-block;">></p>
+                    <a id="link1">About Us</a>
+                </div>
+                <div style="padding-bottom: 10px;">
+                    <p style="display: inline-block;">></p>
+                    <a id="link2">Contact Us</a>
+                </div>
+                <div style="padding-bottom: 10px;">
+                    <p style="display: inline-block;">></p>
+                    <a id="link3">Reservation</a>
+                </div>
+                <div style="padding-bottom: 10px;">
+                    <p style="display: inline-block;">></p>
+                    <a id="link4">Privacy Policy</a>
+                </div>
+                <div style="padding-bottom: 10px;">
+                    <p style="display: inline-block;">></p>
+                    <a id="link5">Terms & Conditions</a>
+                </div>
+            </div>
+            <div class="contact-details">
+                <h3 style="padding-bottom: 20px;">contact</h3>
+                <div class="location">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                          </svg>
+                        </div>
+                    <div style="color:white;padding-left: 10px; font-size:15px; ">
+                        <a id="link6">123 Street,New York,USA</a>
+                    </div>   
+                </div>
+                <div class="phone" >
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                        </svg>
+                    </div>
+                    <div style="color:white; font-size:15px; ">
+                        <a id="link6">+0123 5677 97643</a>
+                    </div> 
+                </div>
+                <div class="email">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                            <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
+                        </svg>
+                    </div>
+                    <div style="color:white;padding-left: 10px; font-size:15px;">
+                        <a id="link6">info@example.com</a>
+                    </div> 
+                </div>
+                <div class="social-icons" style="padding: 10px 20px;">
+                    <div class="link10">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-twitter" viewBox="0 0 16 16">
+                            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15"/>
+                          </svg>
+                        
+                    </div>
+                    <div class="link11">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-facebook" viewBox="0 0 16 16" bckground-color="transparent">
+                            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                          </svg>
+                    </div>
+                    <div class="link12">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-youtube" viewBox="0 0 16 16">
+                            <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
+                          </svg>
+                    </div>
+                    <div class="link13">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-linkedin" viewBox="0 0 16 16">
+                            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+                          </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="opening">
+                <h3 style="padding-bottom: 20px;">opening</h3>
+                <p>Monday-Saturday</p>
+                <p>09 AM- 09 PM</p>
+                <p>Sunday</p>
+                <p>10 AM - 8 PM</p>
+            </div>
+            <div class="newsletter">
+                <h3 style="padding-bottom: 20px;">newsletter</h3>
+                <p>Dolor amet sit justo amet elitr clipta ipsum elitr set</p>
+                <div class="newsletter-form">
+                    <form action="" method="">
+                        <input type="email" placeholder="Your Email">
+                        <button>SIGNUP</button> 
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </div>  
+</body>
+</html>
